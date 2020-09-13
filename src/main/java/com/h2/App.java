@@ -16,9 +16,9 @@ public class App
     }
 
     private static int add(int[] number) {
-        int sum = 0;
+        var sum = 0;
         for (int sumAll : number) {
-            sum = sum + sumAll;
+            sum += sumAll;
         }
 
         return sum;
