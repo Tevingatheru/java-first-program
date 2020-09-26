@@ -1,5 +1,7 @@
 package com.h2;
 
+import java.text.DecimalFormat;
+
 /**
  * This class facilitates the calculation of the net monthly savings
  * for an individual given their income and expenses.
@@ -17,6 +19,18 @@ public class MortgageCalculator {
         this.annualRate = annualRate;
     }
 
+    public static void main(String[] args) {
+        long loanAmount = Long.parseLong(args[0]);
+        int termInYears = Integer.parseInt(args[1]);
+        float annualRate = Float.parseFloat(args[2]);
+
+        MortgageCalculator calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
+        calculator
+                .calculateMonthlyPayment();
+
+        System.out.println(calculator.toString());
+    }
+
     /**
      * This method is required to compute the monthly mortgage payment.
      * @return number of payments of type {@int}
@@ -32,5 +46,22 @@ public class MortgageCalculator {
     private float getMonthlyInterestRate() {
         float interestRate  = (annualRate/100)/12;
         return interestRate;
+    }
+
+    /**
+     * This method computes the monthly mortgage payment.
+     */
+    public void calculateMonthlyPayment() {
+        float r = getMonthlyInterestRate();
+        long P = loanAmount;
+        int n = getNumberOfPayments();
+
+        monthlyPayment = P * (((r * Math.pow(1 + r, n))) / ((Math.pow((1 + r), n)) - 1));
+    }
+
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("####0.00");
+        return "monthlyPayment: " + df.format(monthlyPayment);
     }
 }

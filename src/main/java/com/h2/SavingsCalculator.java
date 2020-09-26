@@ -12,22 +12,6 @@ public class SavingsCalculator {
         this.debits = debits;
     }
 
-    public float[] getCredits() {
-        return credits;
-    }
-
-    public void setCredits(float[] credits) {
-        this.credits = credits;
-    }
-
-    public float[] getDebits() {
-        return debits;
-    }
-
-    public void setDebits(float[] debits) {
-        this.debits = debits;
-    }
-
     public static void main(String[] args) {
         final String[] creditsAsString = args[0].split(",");
         final String[] debitsAsString = args[1].split(",");
@@ -61,7 +45,6 @@ public class SavingsCalculator {
     }
 
     /**
-     *
      * @return sum debits
      */
     private float sumOfDebits() {
@@ -74,7 +57,6 @@ public class SavingsCalculator {
     }
 
     /**
-     *
      * @param date current date
      * @return number of remaining days
      */
