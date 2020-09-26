@@ -54,25 +54,27 @@ public class SavingsCalculator {
     private float sumOfCredits() {
 
         float sum = 0.0f;
-        for(float credit: getCredits()) {
+        for(float credit: credits) {
             sum += credit;
         }
         return sum;
     }
 
     /**
+     *
      * @return sum debits
      */
     private float sumOfDebits() {
 
         float sum = 0.0f;
-        for(float debit: getDebits()) {
+        for(float debit: debits) {
             sum += debit;
         }
         return sum;
     }
 
     /**
+     *
      * @param date current date
      * @return number of remaining days
      */
