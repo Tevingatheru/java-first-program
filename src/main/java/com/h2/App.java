@@ -2,7 +2,6 @@ package com.h2;
 
 /**
  * Hello world!
- *
  */
 public class App 
 {

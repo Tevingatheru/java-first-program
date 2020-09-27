@@ -3,6 +3,10 @@ package com.h2;
 import java.time.LocalDate;
 import java.time.YearMonth;
 
+/**
+ * This class calculates the net monthly savings given income and expenses.
+ * income is denoted as credits while expense is denoted as debits
+ */
 public class SavingsCalculator {
     private float[] credits;
     private float[] debits;

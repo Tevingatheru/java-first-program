@@ -8,9 +8,9 @@ import java.text.DecimalFormat;
  * Income is denoted as credits and expenses is denoted as debit.
  */
 public class MortgageCalculator {
-    private long loanAmount;
-    private int termInYears;
-    private float annualRate;
+    private final long loanAmount;
+    private final int termInYears;
+    private final float annualRate;
     private double monthlyPayment;
 
     public MortgageCalculator(long loanAmount, int termInYears, float annualRate) {

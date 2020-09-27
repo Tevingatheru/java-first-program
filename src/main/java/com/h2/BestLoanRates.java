@@ -3,6 +3,9 @@ package com.h2;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * This class calculates the best loan rate based on the loan term.
+ */
 public class BestLoanRates {        
     public static final Map<Integer, Float> bestRates = Map.of(
             1, 5.50f,
